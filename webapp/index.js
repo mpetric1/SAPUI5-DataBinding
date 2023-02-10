@@ -2,8 +2,9 @@ sap.ui.require([
     "sap/m/Text",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/mvc/XMLView",
-    "sap/ui/model/BindingMode"
-], function (Text, JSONModel, XMLView, BindingMode) {
+    "sap/ui/model/BindingMode",
+    "sap/ui/model/resource/ResourceModel"
+], function (Text, JSONModel, XMLView, BindingMode, ResourceModel) {
     "use strict";
     // attach an anonymous function to the SAPUI5 'init' event
     sap.ui.getCore().attachInit(function () {
@@ -19,7 +20,16 @@ sap.ui.require([
         });
 
 
-        oModel.setDefaultBindingMode(BindingMode.OneWay);
+        var oResourceModel = new ResourceModel({
+            bundleName: "sap.ui.demo.db.i18n.i18n",
+            supportedLocales: ["", "hr"],
+            fallbackLocale: ""
+        });
+
+        sap.ui.getCore().setModel(oResourceModel, "i18n");
+
+
+        // oModel.setDefaultBindingMode(BindingMode.OneWay);
 
 
         //assign the model object to the sapui5 core
