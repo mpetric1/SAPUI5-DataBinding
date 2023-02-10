@@ -1,4 +1,4 @@
-<mvc:View xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form">
+<mvc:View controllerName="sap.ui.demo.db.controller.App" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form">
     <Panel headerText="{i18n>panel1HeaderText}" class="sapUiResponsiveMargin" width="auto">
         <form:SimpleForm editable="true" layout="ColumnLayout">
             <Label text="{i18n>First Name}" />
@@ -14,6 +14,13 @@
             <l:VerticalLayout>
                 <Label labelFor="address" text="{i18n>address}:" />
                 <FormattedText class="sapUiSmallMarginBottom" htmlText="{/address/street}&lt;br>{/address/zip} {/address/city}&lt;br>{/address/country}" id="address" width="200px" />
+                <Link href="{
+						parts: [
+							'/firstName',
+							'/lastName'
+						],
+						formatter: '.formatMail'
+					}" text="{i18n>sendEmail}" />
             </l:VerticalLayout>
         </content>
     </Panel>
