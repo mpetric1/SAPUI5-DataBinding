@@ -29,6 +29,7 @@ sap.ui.require([
                 country: "Croatia"
             },
             salesAmount: 12345.6789,
+            priceThreshold: 20,
             currencyCode: "EUR",
             panel1HeaderText: "Data Binding Basics",
         });
