@@ -22,6 +22,8 @@ sap.ui.require([
                 zip: "12345",
                 country: "Croatia"
             },
+            salesAmount: 12345.6789,
+            currencyCode: "EUR",
             panel1HeaderText: "Data Binding Basics",
         });
 
