@@ -45,9 +45,17 @@ sap.ui.require([
         sap.ui.getCore().setModel(oModel);
 
         // display the XML view called "App"
-        new XMLView({
+        var oView = new XMLView({
             viewName: "sap.ui.demo.db.view.App"
-        }).placeAt("content");
+        })
+
+        // register the view the message manager
+        sap.ui.getCore().getMessageManager().registerObject(oView, true);
+
+
+
+        // display the XML view called "App"
+        oView.placeAt("content");
 
 
     })
